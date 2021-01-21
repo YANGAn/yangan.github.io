@@ -1,3 +1,5 @@
+
+usemathjax: true
 ---
 layout: post
 title:  "Welcome to Jekyll!"
