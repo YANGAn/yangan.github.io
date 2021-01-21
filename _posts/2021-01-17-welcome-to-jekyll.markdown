@@ -23,7 +23,8 @@ print_hi('Tom')
 {% endhighlight %}
 
 
-$$a^2 + b^2 = c^2$$ --> note that all equations between these tags will not need escaping! 
+$$a^2 + b^2 = c^2$$
+ --> note that all equations between these tags will not need escaping! 
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
