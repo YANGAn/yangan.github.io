@@ -1,33 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-    <h1>{{ page.title }}</h1>
-    <section>
-      {{ content }}
-    </section>
-    <footer>
-      &copy; to me
-    </footer>
-  </body>
+<head>
+{% include meta_tags/base.html %}
+{% include externals/styling.html %}
+</head>
+<body>
+<div class="wrapper">
+{% include header.html %}
+{{ content }}
+<br>
+{% if page.comments %}
+{% include post/disqus.html %}
+{% endif %}
+<br>
+{% include page/about.html %}
+</div>
+</body>
 </html>
 
 
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-    tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    processEscapes: true
-    }
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+      },
+      TeX: {
+        Macros: {
+          bra: ["\\langle{#1}|", 1],
+          ket: ["|{#1}\\rangle", 1],
+          braket: ["\\langle{#1}\\rangle", 1],
+          bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+       }
+     }
     });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </script>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script>

@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2021-02-07 16:20:46 +0800
-categories: jekyll update
+title:  "Basic of Stochastic Calculus"
+date:   2021-02-14 16:20:46 +0800
+categories: math
 use_math: true
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Brownian Motion
+
+In discrete format, 
 
 Jekyll requires blog post files to be named according to the following format:
 
