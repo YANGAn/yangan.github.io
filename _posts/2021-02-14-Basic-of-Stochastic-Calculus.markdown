@@ -5,7 +5,7 @@ date:   2021-02-14 16:20:46 +0800
 categories: math
 use_math: true
 ---
-Brownian Motion
+**Brownian Motion**
 
 In discrete format, 
 

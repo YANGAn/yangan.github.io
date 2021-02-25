@@ -6,7 +6,7 @@ categories: math
 use_math: true
 ---
 
-This article helps you understand the concept of Machine Laerning. The details of algorithms are not introduced here. The basic comes in FAQ format.
+This article helps you understand the concept of Machine Laerning. It comes in the format of FAQ (Frequently Asked Questions), and focuses on the mysteries that I had during the study of machine learning. The general ideas of algorithms are also introduced here but not in details of mathematical basic or implementation.
 
 **What's the ML (Machine Learning)?**
 
