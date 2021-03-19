@@ -1,0 +1,50 @@
+<!-- <header class="header">
+<div class="navigation">
+{% if page.full_logo %}
+<a href="{{ site.baseurl }}/" class="logo">{{ site.title }}</a>
+{% else %}
+<a href="{{ site.baseurl }}/" class="logo">{{ site.short_logo }}</a>
+{% endif %}
+<ul class="menu">
+<li class="menu__entry"><a href="{{ site.baseurl}}/">post</a></li>
+<li class="menu__entry"><a href="{{ site.baseurl }}/projects">projects</a></li> -->
+<!-- <li class="menu__entry"><a href="{{ site.baseurl }}/posts">posts</a></li>
+</ul>
+</div>
+<ul class="social-links">
+{% if site.author.email %}
+<a href="mailto:{{ site.author.email }}" class="social-links__entry" target="_blank">
+<i class="fas fa-envelope-square"></i>
+</a>
+{% endif %}
+{% if site.author.github %}
+<a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+{% endif %}
+{% if site.author.linkedin %}
+<a href="https://in.linkedin.com/in/{{ site.author.linkedin }}" class="social-links__entry" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+{% endif %}
+</ul>
+</header> -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+      },
+      TeX: {
+        Macros: {
+          bra: ["\\langle{#1}|", 1],
+          ket: ["|{#1}\\rangle", 1],
+          braket: ["\\langle{#1}\\rangle", 1],
+          bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+       }
+     }
+    });
+  </script>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script>

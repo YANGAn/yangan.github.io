@@ -7,27 +7,24 @@ use_math: true
 ---
 **Brownian Motion**
 
-In discrete format, 
+In discrete format, the concept of random walk is relatively easy to accept, one time one uniform step, up or down. In the macroworld, there is seldom change/motion which is discrete. The Brownian Motion can be seen as the continuous motion with uniform speed, where the direction is up or down and can change anytime. Based on this understanding, naturally there are two charaticstics of the Brownian Motion $W(t), t\geq 0$:
 
-Jekyll requires blog post files to be named according to the following format:
+* $ W([t_1,t_2]) = W(t_2) - W(t_1) $ is independent from $W([t_i,t_j])$ if the time is not overlapped
 
-`YEAR-MONTH-DAY-title.MARKUP`
+* $ W([t_1,t_2]) $ is normal distributed, i.e. $N(0,t_2-t_1)$
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+The above is also how the Brownian Motion is defined. Just a word on probability space $(\Omega, \mathcal{F}, \mathbb{P})$, and this can simply understand as (All the outcomes, Rule, Probability).
 
-Jekyll also offers powerful support for code snippets:
+For the problem of Brownian Motion, it is solved or becomes easier if the form of $W([t_1,t_2])$ emerges.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+**Martingale Property**
 
-$$x^2$$
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+$\mathbb{E}[W(t)\|\mathcal{F}(s)] = W(s), s< t $
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+The martingale property is important but it might be more useful to check **Exponential Martingale Property** and **Markov Property**.
+
+Exponential Martingale Property: $\mathbb{E}[Z(t)\|\mathcal{F}(s)] = Z(s), s< t $ where $Z(t)=exp \[ \sigma W(t)-\frac{1}{2}\sigma^2t \]$
+
+
+
+

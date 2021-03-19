@@ -24,6 +24,7 @@ AI: general concept to allow machines to act like humans. In this sense, AI is t
 
 The common part is data driven. Statistics / Data Mining study the patterns, relationships or anomalies of data / large data set. This requires human intervention and decision making. Machine Learning fully/partially cuts the human intervention.
 
+
 **The classification of Machine Learning**
 
 * Supervised Learning - labelled
@@ -35,14 +36,15 @@ The common part is data driven. Statistics / Data Mining study the patterns, rel
 
 **The common algorithms**
 
-* Regression
-* Decision Tree
+* Regression - *linear relationships with (transformed) features*
+* Decision Tree - *flowchart with conditions on features*
 * K-Nearest Neighbors (KNN)
 * Random Forest
 * Gradient Boosting (GBT)
 * Support Vector Machine (SVM)
 * Neural Network
 
-ANNs - Artificial Neural Networks
+# ANNs - Artificial Neural Networks
+Because of the requirement of little human invention, the criteria of justifying a model becomes very importance and must be quantifiable/measurable. You will see the measurement how good the model is plays a very important part of Machine Learning. Take regression as an example, in Statistics, the practitioner focuses on the relationship between dependent variable and independent variables/features and further the economic explanation/understanding. However, in Machine Learning, this relationship is driven by the goodness of fitting and the prediction power gives the final call. 
 
 Reference: Nelson Liu, Ngee Ann Polytechnic, Introduction to Machine Learning, 2021
