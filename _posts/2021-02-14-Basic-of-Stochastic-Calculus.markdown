@@ -52,7 +52,7 @@ $g(x)= \frac{1}{\sqrt{2\pi\tau}}\int_{-\infty}^{\infty} f(y) e^{-\frac{(y-x)^2}{
 
 ## Derivative of $W(t)$
 
-The answer of the derivate $\frac{d}{dt}W(t)$ is that it doesn't exist. Wait! You mentioned that $W(t)$ is normal distributed and normal distribution is continuous! 
+The derivate $\frac{d}{dt}W(t)$ doesn't exist. Wait! You mentioned that $W(t)$ is normal distributed and normal distribution is continuous! 
 
 > Please note that the outcome of Brownian Motion $W(t)$ is normal distributed, NOT the process against the time $t$.
 

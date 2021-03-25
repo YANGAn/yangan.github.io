@@ -37,14 +37,32 @@ The common part is data driven. Statistics / Data Mining study the patterns, rel
 **The common algorithms**
 
 * Regression - *linear relationships with (transformed) features*
-* Decision Tree - *flowchart with conditions on features*
+* [Decision Tree]({% post_url 2021-03-25-Decision-Tree%}) - *flowchart with conditions on features*
 * K-Nearest Neighbors (KNN)
 * Random Forest
 * Gradient Boosting (GBT)
 * Support Vector Machine (SVM)
 * Neural Network
 
-# ANNs - Artificial Neural Networks
+[Comment]: #ANNs - Artificial Neural Networks
 Because of the requirement of little human invention, the criteria of justifying a model becomes very importance and must be quantifiable/measurable. You will see the measurement how good the model is plays a very important part of Machine Learning. Take regression as an example, in Statistics, the practitioner focuses on the relationship between dependent variable and independent variables/features and further the economic explanation/understanding. However, in Machine Learning, this relationship is driven by the goodness of fitting and the prediction power gives the final call. 
 
-Reference: Nelson Liu, Ngee Ann Polytechnic, Introduction to Machine Learning, 2021
+The evaluation of the fitting is leveraged by **cost function**, which is explicitely defined in mathematical formula. The cost function can be the gap between actual values and predicted values, also, it can be the quantifiable penality of each solution.
+
+Now we have the problem, the algorithm and the well-defined cost function. How will the algorithm achieve the final solution, or evolve by on-going fed-in data/experience? The answer is **Optimizer**, which can be understood as the tool you use to achieve the task. The optimizer determines the efficiency of the model.
+
+To summarise, we cite from Tom Mitchell again on how he describe well-posed learning problem.
+
+> Well-posed Learning Problem: A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.
+>
+>   --- by Tom Mitchell, 1998   
+
+So the key elements to solve a problem by Machine Learning are 
+
+* Task/Problem
+* Data/Experience
+* Performance Measure/Cost function
+* Algorithm
+* Optimizer
+
+[Comment]: #Reference: Nelson Liu, Ngee Ann Polytechnic, Introduction to Machine Learning, 2021

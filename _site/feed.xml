@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-03-25T17:43:33+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">Decision Tree</title><link href="http://localhost:4001/math/2021/03/25/Decision-Tree.html" rel="alternate" type="text/html" title="Decision Tree" /><published>2021-03-25T08:20:46+08:00</published><updated>2021-03-25T08:20:46+08:00</updated><id>http://localhost:4001/math/2021/03/25/Decision-Tree</id><content type="html" xml:base="http://localhost:4001/math/2021/03/25/Decision-Tree.html"></content><author><name>Yang An</name></author><category term="math" /><summary type="html"></summary></entry><entry><title type="html">Basic of Machine Learning</title><link href="http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning.html" rel="alternate" type="text/html" title="Basic of Machine Learning" /><published>2021-02-15T09:20:46+08:00</published><updated>2021-02-15T09:20:46+08:00</updated><id>http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning</id><content type="html" xml:base="http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning.html">&lt;p&gt;This article helps you understand the concept of Machine Laerning. It comes in the format of FAQ (Frequently Asked Questions), and focuses on the mysteries that I had during the study of machine learning. The general ideas of algorithms are also introduced here but not in details of mathematical basic or implementation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s the ML (Machine Learning)?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ML: the computer algorithm with data feed to achieve self-evolving solution. A video of the introduction to Machine Learning? (&lt;a href=&quot;https://youtu.be/QghjaS0WQQU&quot;&gt;2 minutes video&lt;/a&gt;)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience.&lt;/p&gt;
+
+  &lt;p&gt;— by Tom Mitchell, McGraw Hill, 1997&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s the difference from AI (Artificial Intelligence)?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;AI: general concept to allow machines to act like humans. In this sense, AI is the intergated product of “smart” machine, which can include the algorithm, the soft/hard-ware and the interaction with human or environment.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s the difference from Statistics / Data Mining?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The common part is data driven. Statistics / Data Mining study the patterns, relationships or anomalies of data / large data set. This requires human intervention and decision making. Machine Learning fully/partially cuts the human intervention.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The classification of Machine Learning&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Supervised Learning - labelled&lt;/li&gt;
+  &lt;li&gt;Unsupervised Learning - non-labelled&lt;/li&gt;
+  &lt;li&gt;Reinforcement Learning - interaction/dynamics to maximize the cumulative reward (e.g.Go game, the next step depends on the interaction of the opponent, and there is no sure win until the last stage but the highest chance to win.) A fun example is the &lt;a href=&quot;https://youtu.be/qv6UVOQ0F44&quot;&gt;Mario video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Deep Learning, also known as deep neural learning or deep neural network.&lt;/em&gt;&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;em&gt;It’s not one of the classification of problems that Machine Learning is going to solve. Instead, Deep Learning is an algorithm of neural network to solve any problem it can.&lt;/em&gt;&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;The common algorithms&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Regression - &lt;em&gt;linear relationships with (transformed) features&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/math/2021/03/25/Decision-Tree.html&quot;&gt;Decision Tree&lt;/a&gt; - &lt;em&gt;flowchart with conditions on features&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;K-Nearest Neighbors (KNN)&lt;/li&gt;
+  &lt;li&gt;Random Forest&lt;/li&gt;
+  &lt;li&gt;Gradient Boosting (GBT)&lt;/li&gt;
+  &lt;li&gt;Support Vector Machine (SVM)&lt;/li&gt;
+  &lt;li&gt;Neural Network&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because of the requirement of little human invention, the criteria of justifying a model becomes very importance and must be quantifiable/measurable. You will see the measurement how good the model is plays a very important part of Machine Learning. Take regression as an example, in Statistics, the practitioner focuses on the relationship between dependent variable and independent variables/features and further the economic explanation/understanding. However, in Machine Learning, this relationship is driven by the goodness of fitting and the prediction power gives the final call.&lt;/p&gt;
+
+&lt;p&gt;The evaluation of the fitting is leveraged by &lt;strong&gt;cost function&lt;/strong&gt;, which is explicitely defined in mathematical formula. The cost function can be the gap between actual values and predicted values, also, it can be the quantifiable penality of each solution.&lt;/p&gt;
+
+&lt;p&gt;Now we have the problem, the algorithm and the well-defined cost function. How will the algorithm achieve the final solution, or evolve by on-going fed-in data/experience? The answer is &lt;strong&gt;Optimizer&lt;/strong&gt;, which can be understood as the tool you use to achieve the task. The optimizer determines the efficiency of the model.&lt;/p&gt;
+
+&lt;p&gt;To summarise, we cite from Tom Mitchell again on how he describe well-posed learning problem.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Well-posed Learning Problem: A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.&lt;/p&gt;
+
+  &lt;p&gt;— by Tom Mitchell, 1998&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So the key elements to solve a problem by Machine Learning are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Task/Problem&lt;/li&gt;
+  &lt;li&gt;Data/Experience&lt;/li&gt;
+  &lt;li&gt;Performance Measure/Cost function&lt;/li&gt;
+  &lt;li&gt;Algorithm&lt;/li&gt;
+  &lt;li&gt;Optimizer&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">This article helps you understand the concept of Machine Laerning. It comes in the format of FAQ (Frequently Asked Questions), and focuses on the mysteries that I had during the study of machine learning. The general ideas of algorithms are also introduced here but not in details of mathematical basic or implementation.</summary></entry><entry><title type="html">Basic of Stochastic Calculus</title><link href="http://localhost:4001/math/2021/02/14/Basic-of-Stochastic-Calculus.html" rel="alternate" type="text/html" title="Basic of Stochastic Calculus" /><published>2021-02-14T16:20:46+08:00</published><updated>2021-02-14T16:20:46+08:00</updated><id>http://localhost:4001/math/2021/02/14/Basic-of-Stochastic-Calculus</id><content type="html" xml:base="http://localhost:4001/math/2021/02/14/Basic-of-Stochastic-Calculus.html">&lt;h2 id=&quot;brownian-motion&quot;&gt;Brownian Motion&lt;/h2&gt;
+
+&lt;p&gt;In discrete format, the concept of random walk is relatively easy to accept, one time one uniform step, up or down. In the macroworld, there is seldom change/motion which is discrete. The Brownian Motion can be seen as the continuous motion with uniform speed, where the direction is up or down and can change anytime. Based on this understanding, naturally there are three charaticstics of the Brownian Motion $W(t), t\geq 0$:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$W(0) = 0$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$ W([t_1,t_2]) = W(t_2) - W(t_1) $ is independent from $W([t_i,t_j])$ if the time is not overlapped&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$ W([t_1,t_2]) $ is normal distributed, i.e. $N(0,t_2-t_1)$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The above is also how the Brownian Motion is defined. Just a word on probability space $(\Omega, \mathcal{F}, \mathbb{P})$, and this can simply understand as (All the outcomes, Rule, Probability). Specifically, “All the outcomes” mean all the Brownian Motion paths.&lt;/p&gt;
+
+&lt;p&gt;For the problem of Brownian Motion, it is solved or becomes easier if the form of $W([t_1,t_2])$ emerges.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Martingale Property&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$\mathbb{E}[W(t)|\mathcal{F}(s)] = W(s), s&amp;lt; t $&lt;/p&gt;
+
+&lt;p&gt;The martingale property is important but it might be more useful to check Exponential Martingale Property and Markov Property.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exponential Martingale Property&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$\mathbb{E}[Z(t)|\mathcal{F}(s)] = Z(s), s&amp;lt; t $ where $Z(t)=e^{ \sigma W(t)-\frac{1}{2}\sigma^2t }$&lt;/p&gt;
+
+&lt;p&gt;The exponential martingale is a more common form of Martingale in financial mathematics.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Remark: Stopping time &amp;amp; Reflection Principal&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Markov Property&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$\mathbb{E}[f(W(t)|\mathcal{F}(s)]=g(W(s))$&lt;/p&gt;
+
+&lt;p&gt;where $g(x)$ is defined as below:&lt;/p&gt;
+
+&lt;p&gt;$g(x) = \mathbb{E}[f(W(t)-W(s)+x)]=\frac{1}{\sqrt{2\pi(t-s)}}\int_{-\infty}^{\infty} f(w+x) e^{-\frac{w^2}{2(t-s)}} dw$&lt;/p&gt;
+
+&lt;p&gt;The process of proof is very important as it introduces &lt;strong&gt;Transition Density&lt;/strong&gt; $p(\tau, x,y)$ which is the probability density from state $x$ to state $y$ with the time period $\tau$. The function $g(x)$ can be rewritten as&lt;/p&gt;
+
+&lt;p&gt;$g(x)= \frac{1}{\sqrt{2\pi\tau}}\int_{-\infty}^{\infty} f(y) e^{-\frac{(y-x)^2}{2\tau}} dy = \int_{-\infty}^{\infty} f(y)p(\tau, x,y)dy$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Remark: It links to Stopping time problem. (This will be discussed in an individual post.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;derivative-of-wt&quot;&gt;Derivative of $W(t)$&lt;/h2&gt;
+
+&lt;p&gt;The derivate $\frac{d}{dt}W(t)$ doesn’t exist. Wait! You mentioned that $W(t)$ is normal distributed and normal distribution is continuous!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Please note that the outcome of Brownian Motion $W(t)$ is normal distributed, NOT the process against the time $t$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Against the time, Brownian Motion is just Brownian Motion, similar to random walk. Then how is the deerivative of $W(t)$ defined? The answer is &lt;strong&gt;Quadratic Variation&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">Brownian Motion</summary></entry></feed>
