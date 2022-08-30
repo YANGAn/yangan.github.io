@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-03-25T17:43:33+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">Decision Tree</title><link href="http://localhost:4001/math/2021/03/25/Decision-Tree.html" rel="alternate" type="text/html" title="Decision Tree" /><published>2021-03-25T08:20:46+08:00</published><updated>2021-03-25T08:20:46+08:00</updated><id>http://localhost:4001/math/2021/03/25/Decision-Tree</id><content type="html" xml:base="http://localhost:4001/math/2021/03/25/Decision-Tree.html"></content><author><name>Yang An</name></author><category term="math" /><summary type="html"></summary></entry><entry><title type="html">Basic of Machine Learning</title><link href="http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning.html" rel="alternate" type="text/html" title="Basic of Machine Learning" /><published>2021-02-15T09:20:46+08:00</published><updated>2021-02-15T09:20:46+08:00</updated><id>http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning</id><content type="html" xml:base="http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning.html">&lt;p&gt;This article helps you understand the concept of Machine Laerning. It comes in the format of FAQ (Frequently Asked Questions), and focuses on the mysteries that I had during the study of machine learning. The general ideas of algorithms are also introduced here but not in details of mathematical basic or implementation.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2022-08-13T15:43:31+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In-Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">Integral in Stochastic Calculus</title><link href="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html" rel="alternate" type="text/html" title="Integral in Stochastic Calculus" /><published>2021-09-08T16:20:46+08:00</published><updated>2021-09-08T16:20:46+08:00</updated><id>http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus</id><content type="html" xml:base="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html">&lt;p&gt;Preliminary article: Basic of Stochastic Calculus&lt;/p&gt;
+
+&lt;p&gt;The Brownian Motion $ W(t) $ is not differentiable, however similar to the definition of quadratic variation, the integral of $W(t)$ can be defined as the sum of value in each partition of the time period, which is called Ito’s Integral:
+\(I(t) = \int_{0}^{t} \Delta (u) dW(u) = \lim_{n \to \infty}\sum_{j=0}^{k-1} \Delta(t_j)[W(t_{j+1})-W(t_j)]\)&lt;/p&gt;
+
+&lt;p&gt;The Ito’s integral satifies the following properties:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;(Maringale)&lt;/strong&gt; $I(t)$ is a martingale&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;(Ito’s isometry)&lt;/strong&gt; $\mathbb{E}I^2(t) = \mathbb{E}\int_{0}^t\Delta^2(u)du$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;(Quadratic variation)&lt;/strong&gt; $[I,I](t) = \int_{0}^t\Delta^2(u)du$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is good to notice the difference of quadratic variation and the variance of the process $I(t)$. The quadratic variation is path-dependent, while the variance of $I(t)$ is an average over all possible paths of the quadratic variation.&lt;/p&gt;
+
+&lt;p&gt;Similar to Riemann integral, the Ito’s integral is calculated from a partition of a time interval $[0,t]$. What does the Brownian motion $W(t)$ do in the integral? For illustration purpose, assume that $\Delta (t)$ is not a function of $W(t)$ but just $t$. The integral will be similar to the graph as below and takes into the consideration of the distribution of $W(t)$ at the time point $t$. In other words, the integral is a multiplication of $\Delta (t)$ and a normal distributed density along the time $t$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/image/Integral_Ito.png&quot; alt=&quot;Integral_Ito&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the case that $\Delta (t)$ is a function of $W(t)$, which is much common in stochastic calculus, it is more complicated but it follows the idea elaborated above.&lt;/p&gt;
+
+&lt;p&gt;When we are given a stochastic process, how can we integrate it into an expressive equation? 
+\(dS(t) = a(t) dt + b(t) dW(t)\)
+The answer is that we don’t need to do it, but we should be used to leave it and view it as some distribution, usually it is normal distribution. Let’s explain it.&lt;/p&gt;
+
+\[\begin{align*}
+ S(T) &amp;amp;= S(0) + \int_{0}^{T} a(t) dt &amp;amp;+ \int_{0}^{T} b(t) dW(t) \\
+    &amp;amp;= S(0) + \int_{0}^{T} a(t) dt &amp;amp;+ \lim_{n-&amp;gt; \infty}\sum_{i=1}^{n} b(t_{i-1}) (W(t_{i}) - W(t_{i-1})) \\
+    &amp;amp;= [\text{mean}] &amp;amp;+ [\text{sum of independent normal distributions}] \\
+    &amp;amp;= [\text{mean}] &amp;amp;+ [\text{a normal distribution}]
+\end{align*}\]
+
+&lt;p&gt;From the above, there are two parts: the ‘mean’ part is ordinary calculus; and the ‘normal distribution’ part. So what is $S(T)$? It’s a normal distribution with the mean $S(0) + \int_{0}^{T} a(t) dt$ and the derivation of $\int_{0}^{T} b(t) dW(t)$. If $b(t)$ is constant $b$, the latter part is $b W(T)$ with the deviation of $b \sqrt{t}$.&lt;/p&gt;
+
+&lt;p&gt;If $b(t)$ is $W(t)$, we have
+\(\int_{0}^{T} W(t) dW(t) = \frac{1}{2} W^2(T) - \frac{1}{2}T\)
+If $b(t)$ is in other form, the integral can be get similarly to Riemann sum, by $\lim_{n-&amp;gt; \infty}\sum_{i=1}^{n} b(t_{i-1}) (W(t_{i}) - W(t_{i-1}))$.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">Preliminary article: Basic of Stochastic Calculus</summary></entry><entry><title type="html">Decision Tree</title><link href="http://localhost:4001/math/2021/03/25/Decision-Tree.html" rel="alternate" type="text/html" title="Decision Tree" /><published>2021-03-25T08:20:46+08:00</published><updated>2021-03-25T08:20:46+08:00</updated><id>http://localhost:4001/math/2021/03/25/Decision-Tree</id><content type="html" xml:base="http://localhost:4001/math/2021/03/25/Decision-Tree.html">&lt;p&gt;Let’s start from an example, the table below lists the factors that affect people’s decision to play golf.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/image/Golf_dataset.png&quot; alt=&quot;Golf_dataset&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the table, it is not straightforward how people make the decision. However, the Decision Tree algorithm can give the graph below and I believe it is much clear to you.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/image/Decision_tree_model.png&quot; alt=&quot;Decision_tree&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes, that is Decision Tree. The idea is natural, as it is the same as one of human thinking process. Decision trees are commonly used to help identify a strategy most likely to reach a goal, but are also a popular tool in machine learning to do classification.&lt;/p&gt;
+
+&lt;p&gt;The mystery I guess is that how each branch is decided. Let’s check the mathematics and algorithm behind. In mathematics part, we will introduce &lt;strong&gt;Impurity&lt;/strong&gt; concept and in algorithm part, you can see how impurity is applied to achieve the goal.&lt;/p&gt;
+
+&lt;h2 id=&quot;mathematics-behind&quot;&gt;Mathematics Behind&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Impurity&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Impurity is a measure of the homogeneity of the classification, in other words, determines how well a decision tree splits.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;algorithm&quot;&gt;Algorithm&lt;/h2&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">Let’s start from an example, the table below lists the factors that affect people’s decision to play golf.</summary></entry><entry><title type="html">Basic of Machine Learning</title><link href="http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning.html" rel="alternate" type="text/html" title="Basic of Machine Learning" /><published>2021-02-15T09:20:46+08:00</published><updated>2021-02-15T09:20:46+08:00</updated><id>http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning</id><content type="html" xml:base="http://localhost:4001/math/2021/02/15/Basic-of-Machine-Learning.html">&lt;p&gt;This article helps you understand the concept of Machine Laerning. It comes in the format of FAQ (Frequently Asked Questions), and focuses on the mysteries that I had during the study of machine learning. The general ideas of algorithms are also introduced here but not in details of mathematical basic or implementation.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What’s the ML (Machine Learning)?&lt;/strong&gt;&lt;/p&gt;
 
@@ -39,9 +101,14 @@
   &lt;li&gt;Regression - &lt;em&gt;linear relationships with (transformed) features&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/math/2021/03/25/Decision-Tree.html&quot;&gt;Decision Tree&lt;/a&gt; - &lt;em&gt;flowchart with conditions on features&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;K-Nearest Neighbors (KNN)&lt;/li&gt;
-  &lt;li&gt;Random Forest&lt;/li&gt;
-  &lt;li&gt;Gradient Boosting (GBT)&lt;/li&gt;
   &lt;li&gt;Support Vector Machine (SVM)&lt;/li&gt;
+  &lt;li&gt;Ensemble Learning
+    &lt;ul&gt;
+      &lt;li&gt;Random Forest&lt;/li&gt;
+      &lt;li&gt;Bagging: Boostrap sampling&lt;/li&gt;
+      &lt;li&gt;Gradient Boosting (GBT)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Neural Network&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -64,7 +131,11 @@
 &lt;ul&gt;
   &lt;li&gt;Task/Problem&lt;/li&gt;
   &lt;li&gt;Data/Experience&lt;/li&gt;
-  &lt;li&gt;Performance Measure/Cost function&lt;/li&gt;
+  &lt;li&gt;Performance Measure/Cost function
+    &lt;ul&gt;
+      &lt;li&gt;This can be part of algorithm&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Algorithm&lt;/li&gt;
   &lt;li&gt;Optimizer&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">This article helps you understand the concept of Machine Laerning. It comes in the format of FAQ (Frequently Asked Questions), and focuses on the mysteries that I had during the study of machine learning. The general ideas of algorithms are also introduced here but not in details of mathematical basic or implementation.</summary></entry><entry><title type="html">Basic of Stochastic Calculus</title><link href="http://localhost:4001/math/2021/02/14/Basic-of-Stochastic-Calculus.html" rel="alternate" type="text/html" title="Basic of Stochastic Calculus" /><published>2021-02-14T16:20:46+08:00</published><updated>2021-02-14T16:20:46+08:00</updated><id>http://localhost:4001/math/2021/02/14/Basic-of-Stochastic-Calculus</id><content type="html" xml:base="http://localhost:4001/math/2021/02/14/Basic-of-Stochastic-Calculus.html">&lt;h2 id=&quot;brownian-motion&quot;&gt;Brownian Motion&lt;/h2&gt;
@@ -87,33 +158,25 @@
 
 &lt;p&gt;For the problem of Brownian Motion, it is solved or becomes easier if the form of $W([t_1,t_2])$ emerges.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Martingale Property&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Martingale Property&lt;/strong&gt;
+\(\mathbb{E}[W(t)|\mathcal{F}(s)] = W(s), s&amp;lt; t\)
+The martingale property is important but it might be more useful to check Exponential Martingale Property and Markov Property.&lt;/p&gt;
 
-&lt;p&gt;$\mathbb{E}[W(t)|\mathcal{F}(s)] = W(s), s&amp;lt; t $&lt;/p&gt;
-
-&lt;p&gt;The martingale property is important but it might be more useful to check Exponential Martingale Property and Markov Property.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exponential Martingale Property&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;$\mathbb{E}[Z(t)|\mathcal{F}(s)] = Z(s), s&amp;lt; t $ where $Z(t)=e^{ \sigma W(t)-\frac{1}{2}\sigma^2t }$&lt;/p&gt;
-
-&lt;p&gt;The exponential martingale is a more common form of Martingale in financial mathematics.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exponential Martingale Property&lt;/strong&gt; 
+\(\mathbb{E}[Z(t)|\mathcal{F}(s)] = Z(s), s&amp;lt; t \text{, where } Z(t)=e^{ \sigma W(t)-\frac{1}{2}\sigma^2t }\) 
+The exponential martingale is a more common form of Martingale in financial mathematics.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Remark: Stopping time &amp;amp; Reflection Principal&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;Markov Property&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Markov Property&lt;/strong&gt; 
+\(\mathbb{E}[f(W(t)|\mathcal{F}(s)]=g(W(s))\)
+where $g(x)$ is defined as below:&lt;/p&gt;
 
-&lt;p&gt;$\mathbb{E}[f(W(t)|\mathcal{F}(s)]=g(W(s))$&lt;/p&gt;
-
-&lt;p&gt;where $g(x)$ is defined as below:&lt;/p&gt;
-
-&lt;p&gt;$g(x) = \mathbb{E}[f(W(t)-W(s)+x)]=\frac{1}{\sqrt{2\pi(t-s)}}\int_{-\infty}^{\infty} f(w+x) e^{-\frac{w^2}{2(t-s)}} dw$&lt;/p&gt;
-
-&lt;p&gt;The process of proof is very important as it introduces &lt;strong&gt;Transition Density&lt;/strong&gt; $p(\tau, x,y)$ which is the probability density from state $x$ to state $y$ with the time period $\tau$. The function $g(x)$ can be rewritten as&lt;/p&gt;
-
-&lt;p&gt;$g(x)= \frac{1}{\sqrt{2\pi\tau}}\int_{-\infty}^{\infty} f(y) e^{-\frac{(y-x)^2}{2\tau}} dy = \int_{-\infty}^{\infty} f(y)p(\tau, x,y)dy$&lt;/p&gt;
+&lt;p&gt;\(g(x) = \mathbb{E}[f(W(t)-W(s)+x)]=\frac{1}{\sqrt{2\pi(t-s)}}\int_{-\infty}^{\infty} f(w+x) e^{-\frac{w^2}{2(t-s)}} dw\)
+The process of proof is very important as it introduces &lt;strong&gt;Transition Density&lt;/strong&gt; $p(\tau, x,y)$ which is the probability density from state $x$ to state $y$ with the time period $\tau$. The function $g(x)$ can be rewritten as 
+\(g(x)= \frac{1}{\sqrt{2\pi\tau}}\int_{-\infty}^{\infty} f(y) e^{-\frac{(y-x)^2}{2\tau}} dy = \int_{-\infty}^{\infty} f(y)p(\tau, x,y)dy\)&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Remark: It links to Stopping time problem. (This will be discussed in an individual post.)&lt;/p&gt;
@@ -121,10 +184,15 @@
 
 &lt;h2 id=&quot;derivative-of-wt&quot;&gt;Derivative of $W(t)$&lt;/h2&gt;
 
-&lt;p&gt;The derivate $\frac{d}{dt}W(t)$ doesn’t exist. Wait! You mentioned that $W(t)$ is normal distributed and normal distribution is continuous!&lt;/p&gt;
+&lt;p&gt;The derivative $\frac{d}{dt}W(t)$ doesn’t exist. Wait! You mentioned that $W(t)$ is normal distributed and normal distribution is continuous!&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Please note that the outcome of Brownian Motion $W(t)$ is normal distributed, NOT the process against the time $t$.&lt;/p&gt;
+  &lt;p&gt;Please note that the outcome of Brownian Motion $W(t)$ at a time $t$ is normal distributed, NOT the process itself.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Against the time, Brownian Motion is just Brownian Motion, similar to random walk. Then how is the deerivative of $W(t)$ defined? The answer is &lt;strong&gt;Quadratic Variation&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">Brownian Motion</summary></entry></feed>
+&lt;p&gt;The Brownian Motion or any function of it is the process against the time. Most of the case, the variable time is the base of other variables in the same function, which means other variables depend on the time. This is why the stochastic calculus is different from calculus.&lt;/p&gt;
+
+&lt;p&gt;Then how is the derivative of $W(t)$ defined? The answer is &lt;strong&gt;Quadratic Variation&lt;/strong&gt;. The Quadratic Varitation is defined as below
+\(\sum_{j=0}^{n-1}(W(t_{j+1}) - W(t_j) )^2 \text{ with } \Pi = \{ t_0,t_1, ..., t_n \} \text{ as a partition of } [0,T]\)&lt;/p&gt;
+
+&lt;p&gt;One result of quadratic variation is that $(W(t_{j+1}-W(t_j))^2$ follows the normal distribution with the mean $(t_{j+1}-t_j)$ and the variance $2(t_{j+1}-t_j)^2$ and this gives us informally $dW(t)dW(t) = dt$.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">Brownian Motion</summary></entry></feed>

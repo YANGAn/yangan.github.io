@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Integral in Stochastic Calculus | In-Between</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Integral in Stochastic Calculus" />
+<meta name="author" content="Yang An" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Preliminary article: Basic of Stochastic Calculus" />
+<meta property="og:description" content="Preliminary article: Basic of Stochastic Calculus" />
+<link rel="canonical" href="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html" />
+<meta property="og:url" content="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html" />
+<meta property="og:site_name" content="In-Between" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-08T16:20:46+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Integral in Stochastic Calculus" />
+<script type="application/ld+json">
+{"headline":"Integral in Stochastic Calculus","dateModified":"2021-09-08T16:20:46+08:00","datePublished":"2021-09-08T16:20:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html"},"author":{"@type":"Person","name":"Yang An"},"url":"http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html","@type":"BlogPosting","description":"Preliminary article: Basic of Stochastic Calculus","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4001/feed.xml" title="In-Between" /></head>
+<body><!-- <header class="header">
+<div class="navigation">
+
+<a href="/" class="logo"></a>
+
+<ul class="menu">
+<li class="menu__entry"><a href="/">post</a></li>
+<li class="menu__entry"><a href="/projects">projects</a></li> -->
+<!-- <li class="menu__entry"><a href="/posts">posts</a></li>
+</ul>
+</div>
+<ul class="social-links">
+
+
+
+</ul>
+</header> -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+      },
+      TeX: {
+        Macros: {
+          bra: ["\\langle{#1}|", 1],
+          ket: ["|{#1}\\rangle", 1],
+          braket: ["\\langle{#1}\\rangle", 1],
+          bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+       }
+     }
+    });
+  </script>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Integral in Stochastic Calculus</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-09-08T16:20:46+08:00" itemprop="datePublished">Sep 8, 2021
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Yang An</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Preliminary article: Basic of Stochastic Calculus</p>
+
+<p>The Brownian Motion $ W(t) $ is not differentiable, however similar to the definition of quadratic variation, the integral of $W(t)$ can be defined as the sum of value in each partition of the time period, which is called Ito’s Integral:
+\(I(t) = \int_{0}^{t} \Delta (u) dW(u) = \lim_{n \to \infty}\sum_{j=0}^{k-1} \Delta(t_j)[W(t_{j+1})-W(t_j)]\)</p>
+
+<p>The Ito’s integral satifies the following properties:</p>
+
+<ul>
+  <li>
+    <p><strong>(Maringale)</strong> $I(t)$ is a martingale</p>
+  </li>
+  <li>
+    <p><strong>(Ito’s isometry)</strong> $\mathbb{E}I^2(t) = \mathbb{E}\int_{0}^t\Delta^2(u)du$</p>
+  </li>
+  <li>
+    <p><strong>(Quadratic variation)</strong> $[I,I](t) = \int_{0}^t\Delta^2(u)du$.</p>
+  </li>
+</ul>
+
+<p>It is good to notice the difference of quadratic variation and the variance of the process $I(t)$. The quadratic variation is path-dependent, while the variance of $I(t)$ is an average over all possible paths of the quadratic variation.</p>
+
+<p>Similar to Riemann integral, the Ito’s integral is calculated from a partition of a time interval $[0,t]$. What does the Brownian motion $W(t)$ do in the integral? For illustration purpose, assume that $\Delta (t)$ is not a function of $W(t)$ but just $t$. The integral will be similar to the graph as below and takes into the consideration of the distribution of $W(t)$ at the time point $t$. In other words, the integral is a multiplication of $\Delta (t)$ and a normal distributed density along the time $t$.</p>
+
+<p><img src="/image/Integral_Ito.png" alt="Integral_Ito" /></p>
+
+<p>In the case that $\Delta (t)$ is a function of $W(t)$, which is much common in stochastic calculus, it is more complicated but it follows the idea elaborated above.</p>
+
+<p>When we are given a stochastic process, how can we integrate it into an expressive equation? 
+\(dS(t) = a(t) dt + b(t) dW(t)\)
+The answer is that we don’t need to do it, but we should be used to leave it and view it as some distribution, usually it is normal distribution. Let’s explain it.</p>
+
+\[\begin{align*}
+ S(T) &amp;= S(0) + \int_{0}^{T} a(t) dt &amp;+ \int_{0}^{T} b(t) dW(t) \\
+    &amp;= S(0) + \int_{0}^{T} a(t) dt &amp;+ \lim_{n-&gt; \infty}\sum_{i=1}^{n} b(t_{i-1}) (W(t_{i}) - W(t_{i-1})) \\
+    &amp;= [\text{mean}] &amp;+ [\text{sum of independent normal distributions}] \\
+    &amp;= [\text{mean}] &amp;+ [\text{a normal distribution}]
+\end{align*}\]
+
+<p>From the above, there are two parts: the ‘mean’ part is ordinary calculus; and the ‘normal distribution’ part. So what is $S(T)$? It’s a normal distribution with the mean $S(0) + \int_{0}^{T} a(t) dt$ and the derivation of $\int_{0}^{T} b(t) dW(t)$. If $b(t)$ is constant $b$, the latter part is $b W(T)$ with the deviation of $b \sqrt{t}$.</p>
+
+<p>If $b(t)$ is $W(t)$, we have
+\(\int_{0}^{T} W(t) dW(t) = \frac{1}{2} W^2(T) - \frac{1}{2}T\)
+If $b(t)$ is in other form, the integral can be get similarly to Riemann sum, by $\lim_{n-&gt; \infty}\sum_{i=1}^{n} b(t_{i-1}) (W(t_{i}) - W(t_{i-1}))$.</p>
+
+
+  </div><a class="u-url" href="/math/2021/09/08/Integral-in-Stochastic-Calculus.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">In-Between</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">In-Between</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

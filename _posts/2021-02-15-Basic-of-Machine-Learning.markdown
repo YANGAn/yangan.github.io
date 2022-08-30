@@ -39,9 +39,12 @@ The common part is data driven. Statistics / Data Mining study the patterns, rel
 * Regression - *linear relationships with (transformed) features*
 * [Decision Tree]({% post_url 2021-03-25-Decision-Tree%}) - *flowchart with conditions on features*
 * K-Nearest Neighbors (KNN)
-* Random Forest
-* Gradient Boosting (GBT)
 * Support Vector Machine (SVM)
+* Ensemble Learning
+    - Random Forest
+    - Bagging: Boostrap sampling
+    - Gradient Boosting (GBT)
+
 * Neural Network
 
 [Comment]: #ANNs - Artificial Neural Networks
@@ -62,7 +65,10 @@ So the key elements to solve a problem by Machine Learning are
 * Task/Problem
 * Data/Experience
 * Performance Measure/Cost function
+    - This can be part of algorithm
 * Algorithm
 * Optimizer
+
+[Comment]: #Regularization can be part of cost function or part of optimizer. https://towardsdatascience.com/regularization-an-important-concept-in-machine-learning-5891628907ea#:~:text=Regularization%20is%20a%20technique%20used,don't%20take%20extreme%20values.
 
 [Comment]: #Reference: Nelson Liu, Ngee Ann Polytechnic, Introduction to Machine Learning, 2021
