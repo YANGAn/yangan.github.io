@@ -85,11 +85,52 @@
 <p><strong>Impurity</strong></p>
 
 <blockquote>
-  <p>Impurity is a measure of the homogeneity of the classification, in other words, determines how well a decision tree splits.</p>
+  <p>Impurity is a measure of the homogeneity of the labels, in other words, determines how well a decision tree splits.</p>
+</blockquote>
+
+<p><strong>Entropy</strong></p>
+
+<blockquote>
+  <p>Entropy is a measure of chaos in the dataset, with weighted entropy to evaluate the splits.</p>
 </blockquote>
 
 <h2 id="algorithm">Algorithm</h2>
 
+<p>CART (Classification and Regression Trees) — This makes use of Gini impurity as the metric.
+ID3 (Iterative Dichotomiser 3) — This uses entropy and information gain as metric.</p>
+
+<p>Gini impurity is defined as</p>
+
+<p>$Impurity = 1 - Gini = 1 - \sum_i{P_i^2}$</p>
+
+<p>where $P_i$ is the probability of one category in the group/subgroup.</p>
+
+<p>Group:</p>
+<ul>
+  <li>Play: 9, Prob: 9/14</li>
+  <li>Don’t Play: 5, Prob: 5/14</li>
+  <li>Gini = $(9/14)^2+ (5/14)^2$</li>
+  <li>Impurity = 1 - Gini = 1- 0.54 = 0.46</li>
+</ul>
+
+<p>Subgroup (weighted impurity):</p>
+<ul>
+  <li>Outlook = 5/14* Sunny Impurity + 4/14* Overcast Impurity + 5/14 * Rain Impurity = 5/14 * 0.48 + 4/14 * 0 + 5/14 * 0.48 = 0.34</li>
+  <li>Windy = 6/14 * Windy Impurity + 8/14 * Non-windy Impurity = 6/14 * 0.38 + 8/14 * 0.5 = 0.43</li>
+</ul>
+
+<p>When it comes to continuous variables, the technique of regression tree is used in the algorithm, like CART, ID3. The regression tree determins threshold(s) by the same measure of impurity. There are different methods to determine the threshold(s). More details can be found in the paper <em>Efficient Determination of Dynamic Split Points in a Decision Tree</em> by Microsoft Research.</p>
+<ul>
+  <li>If the threshold is 85, Humidity = 0.44</li>
+  <li>If the threshold is 80, Humidity = 0.39</li>
+  <li>If the threshold is 70, Humidity = 0.45</li>
+</ul>
+
+<p>Similar regression tree can be done on the feature Temperature. However, you will find the feature Outlook mostly reduces the impurity. Thus it is chosen as the first top leaf on the tree. Similar steps will produce the children leaves.</p>
+
+<h2 id="local-optimum">Local optimum</h2>
+
+<p>It is easy to note that the locally optimal decisions are made at each leaf in the above algorithms. This also makes the decision tree is not robust, i.e. a samll change in the training data can result in a large change in the tree. In this case, you might consider other algorithms such as Dual Information Distance (DID).</p>
 
   </div><a class="u-url" href="/math/2021/03/25/Decision-Tree.html" hidden></a>
 </article>
