@@ -6,7 +6,11 @@ categories: math
 use_math: true
 ---
 
-Let's start from an example, the table below lists the factors that affect people's decision to play golf. 
+Decision Tree is a supervised learning approach. The model is a predictive model and usually for classification, where the target variable is discrete. Although it also can be used for continuous target variable, the prediction is less effective.
+
+The decision tree is intuitive and usually the softwares provide the visualisation. One benefit of the process is that it can handle the dependent variables, both discrete and continous.
+
+Let's check one example, the table below lists the factors that affect people's decision to play golf. 
 
 ![Golf_dataset](/image/Golf_dataset.png)
 
