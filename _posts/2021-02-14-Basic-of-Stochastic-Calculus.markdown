@@ -63,7 +63,7 @@ $$
 \sum_{j=0}^{n-1}(W(t_{j+1}) - W(t_j) )^2 \text{ with } \Pi = \{ t_0,t_1, ..., t_n \} \text{ as a partition of } [0,T]
 $$
 
-One result of quadratic variation is that $(W(t_{j+1}-W(t_j))^2$ follows the normal distribution with the mean $(t_{j+1}-t_j)$ and the variance $2(t_{j+1}-t_j)^2$ and this gives us informally $dW(t)dW(t) = dt$.
+One result of quadratic variation is that $(W(t_{j+1}-W(t_j))^2$ follows the Chi-squared distribution with the mean $(t_{j+1}-t_j)$ and the variance $2(t_{j+1}-t_j)^2$ and this gives us informally $dW(t)dW(t) = dt$.
 
 
 
