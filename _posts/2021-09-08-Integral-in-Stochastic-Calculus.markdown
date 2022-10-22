@@ -6,7 +6,7 @@ categories: math
 use_math: true
 ---
 
-Preliminary article: Basic of Stochastic Calculus
+Preliminary article: [Basic of Stochastic Calculus]({% post_url 2021-02-14-Basic-of-Stochastic-Calculus%})
 
 The Brownian Motion $ W(t) $ is not differentiable, however similar to the definition of quadratic variation, the integral of $W(t)$ can be defined as the sum of value in each partition of the time period, which is called Ito's Integral:
 $$
@@ -21,7 +21,7 @@ The Ito's integral satifies the following properties:
 
 * **(Quadratic variation)** $\[I,I\](t) = \int_{0}^t\Delta^2(u)du$.
 
-It is good to notice the difference of quadratic variation and the variance of the process $I(t)$. The quadratic variation is path-dependent, while the variance of $I(t)$ is an average over all possible paths of the quadratic variation.
+It is good to notice the difference between quadratic variation and the variance of the process $I(t)$. The quadratic variation is path-dependent, while the variance of $I(t)$ is an average over all possible paths of the quadratic variation.
 
 Similar to Riemann integral, the Ito's integral is calculated from a partition of a time interval $[0,t]$. What does the Brownian motion $W(t)$ do in the integral? For illustration purpose, assume that $\Delta (t)$ is not a function of $W(t)$ but just $t$. The integral will be similar to the graph as below and takes into the consideration of the distribution of $W(t)$ at the time point $t$. In other words, the integral is a multiplication of $\Delta (t)$ and a normal distributed density along the time $t$. 
 

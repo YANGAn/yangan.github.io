@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2022-10-14T11:01:15+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In-Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">Integral in Stochastic Calculus</title><link href="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html" rel="alternate" type="text/html" title="Integral in Stochastic Calculus" /><published>2021-09-08T16:20:46+08:00</published><updated>2021-09-08T16:20:46+08:00</updated><id>http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus</id><content type="html" xml:base="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html">&lt;p&gt;Preliminary article: Basic of Stochastic Calculus&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2022-10-22T12:04:36+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In-Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">Ito’s Lemma</title><link href="http://localhost:4001/math/2022/10/10/Ito's-Lemma.html" rel="alternate" type="text/html" title="Ito’s Lemma" /><published>2022-10-10T16:20:46+08:00</published><updated>2022-10-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2022/10/10/Ito&apos;s-Lemma</id><content type="html" xml:base="http://localhost:4001/math/2022/10/10/Ito&apos;s-Lemma.html">&lt;p&gt;Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula.&lt;/p&gt;
+
+&lt;p&gt;Ito’s Lemma is a differential form of Ito-Doeblin formula. Essentially they are the same but in different forms.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;W. Doeblin was a French soldier on the German Front back to 1940’s. His work was mailed to French National Academy of Science in 1940 and he died shortly after that. The document only discovered and published in 2000.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Ito’s Lemma&lt;/strong&gt;
+Let $W(t)$ be a Brownian motion and $f(t,W(t))$ be a function with the existing of $f_t, f_x$ and $f_{xx}$.&lt;/p&gt;
+
+&lt;p&gt;$df(t,W(t)) = f_t(t,W(t))dt + f_x(t,W(t))dW(t)+ \frac{1}{2}f_{xx}(t,W(t))dt$&lt;/p&gt;
+
+&lt;p&gt;I will see how Ito’s Lemma works to derive a simple version of Fokker-Plank Equation.&lt;/p&gt;
+
+&lt;p&gt;Assume the function $f(X_t)$, we have&lt;/p&gt;
+
+&lt;p&gt;$df = f_xdX_t + \frac{1}{2}f_{xx}dX_t^2$&lt;/p&gt;
+
+&lt;p&gt;If $X_t = W(t)$, then&lt;/p&gt;
+
+&lt;p&gt;$df = f_xdW(t) + \frac{1}{2}f_{xx}dt$&lt;/p&gt;
+
+&lt;p&gt;Take the expectation on both sides, the stochastic part disappears.&lt;/p&gt;
+
+&lt;p&gt;$E[df] = \frac{1}{2}E[f_{xx}]dt$&lt;/p&gt;
+
+&lt;p&gt;Move $dt$ to the left side,&lt;/p&gt;
+
+&lt;p&gt;$\frac{d}{dt}E[f] = \frac{1}{2}E[f_{xx}]$&lt;/p&gt;
+
+&lt;p&gt;Assume the density function of $f(X_t$ is $p(x,t)$ and follow the chain rule, we have the simplified version of Fokk-Plank Equation.&lt;/p&gt;
+
+&lt;p&gt;$\frac{\partial{p(x,t)}}{\partial{t}} = \frac{1}{2}\frac{\partial{^2p(x,t)}}{\partial{x^2}}$&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula.</summary></entry><entry><title type="html">Integral in Stochastic Calculus</title><link href="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html" rel="alternate" type="text/html" title="Integral in Stochastic Calculus" /><published>2021-09-08T16:20:46+08:00</published><updated>2021-09-08T16:20:46+08:00</updated><id>http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus</id><content type="html" xml:base="http://localhost:4001/math/2021/09/08/Integral-in-Stochastic-Calculus.html">&lt;p&gt;Preliminary article: &lt;a href=&quot;/math/2021/02/14/Basic-of-Stochastic-Calculus.html&quot;&gt;Basic of Stochastic Calculus&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The Brownian Motion $ W(t) $ is not differentiable, however similar to the definition of quadratic variation, the integral of $W(t)$ can be defined as the sum of value in each partition of the time period, which is called Ito’s Integral:
 \(I(t) = \int_{0}^{t} \Delta (u) dW(u) = \lim_{n \to \infty}\sum_{j=0}^{k-1} \Delta(t_j)[W(t_{j+1})-W(t_j)]\)&lt;/p&gt;
@@ -17,7 +50,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;It is good to notice the difference of quadratic variation and the variance of the process $I(t)$. The quadratic variation is path-dependent, while the variance of $I(t)$ is an average over all possible paths of the quadratic variation.&lt;/p&gt;
+&lt;p&gt;It is good to notice the difference between quadratic variation and the variance of the process $I(t)$. The quadratic variation is path-dependent, while the variance of $I(t)$ is an average over all possible paths of the quadratic variation.&lt;/p&gt;
 
 &lt;p&gt;Similar to Riemann integral, the Ito’s integral is calculated from a partition of a time interval $[0,t]$. What does the Brownian motion $W(t)$ do in the integral? For illustration purpose, assume that $\Delta (t)$ is not a function of $W(t)$ but just $t$. The integral will be similar to the graph as below and takes into the consideration of the distribution of $W(t)$ at the time point $t$. In other words, the integral is a multiplication of $\Delta (t)$ and a normal distributed density along the time $t$.&lt;/p&gt;
 

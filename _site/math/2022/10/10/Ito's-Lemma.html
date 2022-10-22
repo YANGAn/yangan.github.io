@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Ito’s Lemma | In-Between</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Ito’s Lemma" />
+<meta name="author" content="Yang An" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula." />
+<meta property="og:description" content="Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula." />
+<link rel="canonical" href="http://localhost:4001/math/2022/10/10/Ito's-Lemma.html" />
+<meta property="og:url" content="http://localhost:4001/math/2022/10/10/Ito's-Lemma.html" />
+<meta property="og:site_name" content="In-Between" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-10T16:20:46+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ito’s Lemma" />
+<script type="application/ld+json">
+{"headline":"Ito’s Lemma","dateModified":"2022-10-10T16:20:46+08:00","datePublished":"2022-10-10T16:20:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/math/2022/10/10/Ito's-Lemma.html"},"author":{"@type":"Person","name":"Yang An"},"url":"http://localhost:4001/math/2022/10/10/Ito's-Lemma.html","@type":"BlogPosting","description":"Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4001/feed.xml" title="In-Between" /></head>
+<body><!-- <header class="header">
+<div class="navigation">
+
+<a href="/" class="logo"></a>
+
+<ul class="menu">
+<li class="menu__entry"><a href="/">post</a></li>
+<li class="menu__entry"><a href="/projects">projects</a></li> -->
+<!-- <li class="menu__entry"><a href="/posts">posts</a></li>
+</ul>
+</div>
+<ul class="social-links">
+
+
+
+</ul>
+</header> -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+      },
+      TeX: {
+        Macros: {
+          bra: ["\\langle{#1}|", 1],
+          ket: ["|{#1}\\rangle", 1],
+          braket: ["\\langle{#1}\\rangle", 1],
+          bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+       }
+     }
+    });
+  </script>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Ito&#39;s Lemma</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-10T16:20:46+08:00" itemprop="datePublished">Oct 10, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Yang An</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula.</p>
+
+<p>Ito’s Lemma is a differential form of Ito-Doeblin formula. Essentially they are the same but in different forms.</p>
+
+<blockquote>
+  <p>W. Doeblin was a French soldier on the German Front back to 1940’s. His work was mailed to French National Academy of Science in 1940 and he died shortly after that. The document only discovered and published in 2000.</p>
+</blockquote>
+
+<p><strong>Ito’s Lemma</strong>
+Let $W(t)$ be a Brownian motion and $f(t,W(t))$ be a function with the existing of $f_t, f_x$ and $f_{xx}$.</p>
+
+<p>$df(t,W(t)) = f_t(t,W(t))dt + f_x(t,W(t))dW(t)+ \frac{1}{2}f_{xx}(t,W(t))dt$</p>
+
+<p>I will see how Ito’s Lemma works to derive a simple version of Fokker-Plank Equation.</p>
+
+<p>Assume the function $f(X_t)$, we have</p>
+
+<p>$df = f_xdX_t + \frac{1}{2}f_{xx}dX_t^2$</p>
+
+<p>If $X_t = W(t)$, then</p>
+
+<p>$df = f_xdW(t) + \frac{1}{2}f_{xx}dt$</p>
+
+<p>Take the expectation on both sides, the stochastic part disappears.</p>
+
+<p>$E[df] = \frac{1}{2}E[f_{xx}]dt$</p>
+
+<p>Move $dt$ to the left side,</p>
+
+<p>$\frac{d}{dt}E[f] = \frac{1}{2}E[f_{xx}]$</p>
+
+<p>Assume the density function of $f(X_t$ is $p(x,t)$ and follow the chain rule, we have the simplified version of Fokk-Plank Equation.</p>
+
+<p>$\frac{\partial{p(x,t)}}{\partial{t}} = \frac{1}{2}\frac{\partial{^2p(x,t)}}{\partial{x^2}}$</p>
+
+
+  </div><a class="u-url" href="/math/2022/10/10/Ito's-Lemma.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">In-Between</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">In-Between</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
