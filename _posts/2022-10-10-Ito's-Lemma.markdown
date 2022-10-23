@@ -34,9 +34,12 @@ Move $dt$ to the left side,
 
 $\frac{d}{dt}E[f] = \frac{1}{2}E[f_{xx}]$
 
-Assume the density function of $f(X_t$ is $p(x,t)$ and follow the chain rule, we have the simplified version of Fokk-Plank Equation.
+Assume the density function of $f(X_t)$ is $p(x,t)$ and follow the chain rule, we have the simplified version of Fokk-Plank Equation.
 
 $\frac{\partial{p(x,t)}}{\partial{t}} = \frac{1}{2}\frac{\partial{^2p(x,t)}}{\partial{x^2}}$
+
+
+> If $dX_t = \mu(X_t)dt + \sigma(X_t)dW(t)$, then the Fokk-Plank Equation is $\frac{\partial{p(x,t)}}{\partial{t}} = (-\frac{\partial{}}{\partial{x}} \mu(x) + \frac{1}{2}\frac{\partial{^2}}{\partial{x^2}}\sigma^2(x))p(x,t)$
 
 
 
