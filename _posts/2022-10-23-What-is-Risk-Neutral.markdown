@@ -26,7 +26,7 @@ Let us introduce some concepts in non-technique way.
 * **Measure**: a probability distribution
 * **Change of measure**: change the mean of the distribution, but the volatility keeps.
 
-The rate of return and the probability can be adjusted, in the above language, the benchmark (Numeraire) and the probability distribution (Measure) can be changed for the calculation convinience.   
+The rate of return and the probability can be adjusted, in the above language, the benchmark (Numeraire) and the probability distribution (Measure) can be changed for the calculation convenience.   
 
 
 
