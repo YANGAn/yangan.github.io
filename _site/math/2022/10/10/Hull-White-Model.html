@@ -8,8 +8,8 @@
 <meta property="og:title" content="Hull White Model" />
 <meta name="author" content="Yang An" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts into natural language. It helps understand where the concept comes from, what it exactly means and how we apply." />
-<meta property="og:description" content="A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts into natural language. It helps understand where the concept comes from, what it exactly means and how we apply." />
+<meta name="description" content="The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing." />
+<meta property="og:description" content="The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing." />
 <link rel="canonical" href="http://localhost:4001/math/2022/10/10/Hull-White-Model.html" />
 <meta property="og:url" content="http://localhost:4001/math/2022/10/10/Hull-White-Model.html" />
 <meta property="og:site_name" content="In-Between" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hull White Model" />
 <script type="application/ld+json">
-{"headline":"Hull White Model","dateModified":"2022-10-10T16:20:46+08:00","datePublished":"2022-10-10T16:20:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/math/2022/10/10/Hull-White-Model.html"},"author":{"@type":"Person","name":"Yang An"},"url":"http://localhost:4001/math/2022/10/10/Hull-White-Model.html","@type":"BlogPosting","description":"A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.","@context":"https://schema.org"}</script>
+{"headline":"Hull White Model","dateModified":"2022-10-10T16:20:46+08:00","datePublished":"2022-10-10T16:20:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/math/2022/10/10/Hull-White-Model.html"},"author":{"@type":"Person","name":"Yang An"},"url":"http://localhost:4001/math/2022/10/10/Hull-White-Model.html","@type":"BlogPosting","description":"The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4001/feed.xml" title="In-Between" /></head>
 <body><!-- <header class="header">
@@ -68,7 +68,86 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    
+    <p>The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.</p>
+
+<blockquote>
+  <p>Global fiexed income markets outstanding is \$126.9 trillion in 2021, while global equity market capitalization is \$124.4 trilion in 2021.</p>
+</blockquote>
+
+<blockquote>
+  <p>The notional value of outstanding interest rate derivative is \$440 trillion, while the total derivative is \$610 trillion in 2021.</p>
+</blockquote>
+
+<p>The term structure is the specific part from derivatives on equity market. Hull White model is one of the earliest model that can model the term structure. It is popular because it is non-aribtrage and relatively easy to calibrate.</p>
+
+<p>It models the short rate and becomes one factor model if the mean reversion is pre-determined.</p>
+
+<p><strong>Short Rate</strong></p>
+
+<p>Let $P(t,T)$ be a bond price with the maturity at $T$. The relationship with forward rate $f(t,T)$ is as below.</p>
+
+<p>$P(t,T) = e^{-\int_t^T{f(t,u)du}}$</p>
+
+<p>The forward rate is the rate over the period of $[t,T]$ and observed from market if $t$ is the current time point. The short rate $r(T)$ is $f(T,T)$, a future instantenous rate.</p>
+
+<p>$P(t,T) = \mathbb{E}e^{-\int_t^T{r_u du}}$</p>
+
+<p><strong>Hull White Model</strong></p>
+
+<p>$dr(t) = k[\theta(t) - r(t)]dt +\sigma(t)dW(t)$</p>
+
+<p>Let $r_t = x_t +\phi(t)$, then $\theta(t) = \phi(t) + \frac{1}{k}\frac{d\phi(t)}{dt}$ and the above process becomes the below</p>
+
+<p>$dx_t = -kx_tdt + \sigma(t)dW(t)$</p>
+
+<p>Solve it by the following steps:</p>
+
+<p>$dx_t + kx_tdt = \sigma(t)dW(t)$</p>
+
+<p>$e^{kt}(dx_t + kx_tdt) = e^{kt}\sigma(t)dW(t)$</p>
+
+<p>$de^{kt}x_t =e^{kt}\sigma(t)dW(t)$</p>
+
+<p>Integrate by $t$ from $t$ to $u$,</p>
+
+<p>$\int_t^u de^{kv}x_{v} =\int_t^u e^{kv}\sigma(v)dW(v)$</p>
+
+<p>$x_u = e^{-k(u-t)}x_t + \int_t^u e^{-k(u-v)}\sigma(v)dW(v)$</p>
+
+<p>$r_{u} = \phi(u) + e^{-k(u-t)}x_t + \int_t^u e^{-k(u-v)}\sigma(v)dW(v)$</p>
+
+<p>The above formula gives the explicit solution of short rate $r(u)$.</p>
+
+<p>Integrate by $u$,</p>
+
+<p>$\int_t^T r_{u} du = \int_t^T \phi(u) du + \int_t^T e^{-k(u-t)}x_t du+ \int_t^T \int_t^u e^{-k(u-v)}\sigma(v)dW(v)du$</p>
+
+<p>$\int_t^T r_{u} du = \int_t^T \phi(u) du + \beta(t,T) x_t + \int_t^T \sigma(v)\beta(v,T)dW(v)$,</p>
+
+<p>where $\beta(t,T) = \frac{1}{k}(1-e^{-k(T-t)})$</p>
+
+<p>So the bond price is</p>
+
+<p>$P(t,T) = \mathbb{E} e^{-\int_t^T r_{u} du}$</p>
+
+<p>$P(t,T) = \mathbb{E} e^{-[\int_t^T \phi(u) du + \beta(t,T) x_t + \int_t^T \sigma(v)\beta(v,T)dW(v)]}$</p>
+
+<p>By Exponential Martingale Property,</p>
+
+<p>$P(t,T) = e^{-[\int_t^T \phi(u) du + \beta(t,T) x_t - \frac{1}{2}\int_t^T \sigma^2(v)\beta^2(v,T)dv]}$</p>
+
+<p>$dP(t,T) = P(t,T)*[\phi(t)dt - d(\beta(t,T)x_t) - \frac{1}{2}\sigma^2(t)\beta^2(t,T)dt]$</p>
+
+<p>By Ito’s Lemma on $x_t$,</p>
+
+<p>$dP(t,T) = P(t,T) * [r_tdt - \sigma(t)\beta(t,T)dW(t)]$</p>
+
+<p>The above formula give the relationship between the short rate $r(t)$ and the bond price $P(t,T)$.</p>
+
+<hr />
+
+<p>Reference: Choong Tze Chua, Dean Foster, Krishna Ramaswamy and Robert Stine, A Dynamic Model for the Forward Curve, 2005.</p>
+
 
   </div><a class="u-url" href="/math/2022/10/10/Hull-White-Model.html" hidden></a>
 </article>
