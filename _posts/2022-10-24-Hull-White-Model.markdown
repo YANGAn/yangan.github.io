@@ -49,7 +49,7 @@ $x_u = e^{-k(u-t)}x_t + \int_t^u e^{-k(u-v)}\sigma(v)dW(v)$
 
 $r_{u} = \phi(u) + e^{-k(u-t)}x_t + \int_t^u e^{-k(u-v)}\sigma(v)dW(v)$
 
-The above formula gives the explicit solution of short rate $r(u)$.
+[Comment]: The above formula gives the explicit solution of short rate $r(u)$.
 
 Integrate by $u$,
 

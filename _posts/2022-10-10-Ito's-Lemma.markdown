@@ -16,7 +16,7 @@ Let $W(t)$ be a Brownian motion and $f(t,W(t))$ be a function with the existing 
 
 $df(t,W(t)) = f_t(t,W(t))dt + f_x(t,W(t))dW(t)+ \frac{1}{2}f_{xx}(t,W(t))dt$
 
-I will see how Ito's Lemma works to derive a simple version of Fokker-Plank Equation.
+I will see how Ito's Lemma works to derive a simple version of Fokker-Planck Equation.
 
 Assume the function $f(X_t)$, we have
 
@@ -34,7 +34,7 @@ Move $dt$ to the left side,
 
 $\frac{d}{dt}E[f] = \frac{1}{2}E[f_{xx}]$
 
-Assume the density function of $f(X_t)$ is $p(x,t)$ and follow the chain rule, we have the simplified version of Fokk-Plank Equation.
+Assume the density function of $f(X_t)$ is $p(x,t)$ and follow the chain rule, we have the simplified version of Fokker-Planck Equation.
 
 $\frac{\partial{p(x,t)}}{\partial{t}} = \frac{1}{2}\frac{\partial{^2p(x,t)}}{\partial{x^2}}$
 
