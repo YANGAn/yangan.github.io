@@ -1,58 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2023-07-07T15:03:27+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In-Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">What is Risk Neutral</title><link href="http://localhost:4001/math/2023/01/10/What-is-Risk-Neutral.html" rel="alternate" type="text/html" title="What is Risk Neutral" /><published>2023-01-10T16:20:46+08:00</published><updated>2023-01-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2023/01/10/What-is-Risk-Neutral</id><content type="html" xml:base="http://localhost:4001/math/2023/01/10/What-is-Risk-Neutral.html">&lt;p&gt;From the words Risk Neutral, it tells that the investor has no risk preference. That’s correct, but what does it mean? It means two practical points below to me:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Expected rate of return is risk free rate&lt;/li&gt;
-  &lt;li&gt;The spot price is the expectation of the asset/underlying&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That sounds great for pricing any contingent claim as the asset/underlying is easily predicted. But wait, for a stock, why is the expected rate of return risk free rate? It doesn’t have to, but adjusting the probability can make it.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Rate of return&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;16%&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Rate of return&lt;/th&gt;
-      &lt;th&gt;3%&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Prob $p_1$: 56%&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Prob $p_1$: 50%&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Prob $p_2$: 44%&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Prob $p_2$: 50%&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Expected price&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.97&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Expected price&lt;/td&gt;
-      &lt;td&gt;0.97&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Although the probability is adjusted, the market expected price still matches. In practice, the probability is derived from market price and this process is called calibration.&lt;/p&gt;
-
-&lt;p&gt;Let us introduce some concepts in non-technique way.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Numeraire&lt;/strong&gt;: a positive non-dividend paying asset, which can be seen as a benchmark asset&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Measure&lt;/strong&gt;: a probability distribution&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Change of measure&lt;/strong&gt;: change the mean of the distribution, but the volatility keeps.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The rate of return and the probability can be adjusted, in the above language, the benchmark (Numeraire) and the probability distribution (Measure) can be changed for the calculation convenience.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">From the words Risk Neutral, it tells that the investor has no risk preference. That’s correct, but what does it mean? It means two practical points below to me:</summary></entry><entry><title type="html">Hull White Model</title><link href="http://localhost:4001/math/2022/10/10/Hull-White-Model.html" rel="alternate" type="text/html" title="Hull White Model" /><published>2022-10-10T16:20:46+08:00</published><updated>2022-10-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2022/10/10/Hull-White-Model</id><content type="html" xml:base="http://localhost:4001/math/2022/10/10/Hull-White-Model.html">&lt;p&gt;The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2023-07-07T15:04:44+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">In-Between</title><subtitle>A journey of recognition, appreciation and creation. This blog focuses on translating mathematical concepts  into natural language. It helps understand where the concept comes from, what it exactly means and how we apply.</subtitle><entry><title type="html">Hull White Model</title><link href="http://localhost:4001/math/2023/06/10/Hull-White-Model.html" rel="alternate" type="text/html" title="Hull White Model" /><published>2023-06-10T16:20:46+08:00</published><updated>2023-06-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2023/06/10/Hull-White-Model</id><content type="html" xml:base="http://localhost:4001/math/2023/06/10/Hull-White-Model.html">&lt;p&gt;The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Global fixed income markets outstanding is $126.9 trillion in 2021, while global equity market capitalization is \$124.4 trilion in 2021.&lt;/p&gt;
@@ -137,7 +83,61 @@ $= x(t)dt -\beta(t,T)\sigma(t)dW(t) + \frac{1}{2}\sigma^2(t)\beta^2(t,T)dt$&lt;/
 
 &lt;hr /&gt;
 
-&lt;p&gt;Reference: Choong Tze Chua, Dean Foster, Krishna Ramaswamy and Robert Stine, A Dynamic Model for the Forward Curve, 2005.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.</summary></entry><entry><title type="html">Ito’s Lemma</title><link href="http://localhost:4001/math/2022/10/10/Ito's-Lemma.html" rel="alternate" type="text/html" title="Ito’s Lemma" /><published>2022-10-10T16:20:46+08:00</published><updated>2022-10-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2022/10/10/Ito&apos;s-Lemma</id><content type="html" xml:base="http://localhost:4001/math/2022/10/10/Ito&apos;s-Lemma.html">&lt;p&gt;Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula.&lt;/p&gt;
+&lt;p&gt;Reference: Choong Tze Chua, Dean Foster, Krishna Ramaswamy and Robert Stine, A Dynamic Model for the Forward Curve, 2005.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.</summary></entry><entry><title type="html">What is Risk Neutral</title><link href="http://localhost:4001/math/2023/01/10/What-is-Risk-Neutral.html" rel="alternate" type="text/html" title="What is Risk Neutral" /><published>2023-01-10T16:20:46+08:00</published><updated>2023-01-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2023/01/10/What-is-Risk-Neutral</id><content type="html" xml:base="http://localhost:4001/math/2023/01/10/What-is-Risk-Neutral.html">&lt;p&gt;From the words Risk Neutral, it tells that the investor has no risk preference. That’s correct, but what does it mean? It means two practical points below to me:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Expected rate of return is risk free rate&lt;/li&gt;
+  &lt;li&gt;The spot price is the expectation of the asset/underlying&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That sounds great for pricing any contingent claim as the asset/underlying is easily predicted. But wait, for a stock, why is the expected rate of return risk free rate? It doesn’t have to, but adjusting the probability can make it.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Rate of return&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;16%&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Rate of return&lt;/th&gt;
+      &lt;th&gt;3%&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Prob $p_1$: 56%&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Prob $p_1$: 50%&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Prob $p_2$: 44%&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Prob $p_2$: 50%&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Expected price&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.97&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Expected price&lt;/td&gt;
+      &lt;td&gt;0.97&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Although the probability is adjusted, the market expected price still matches. In practice, the probability is derived from market price and this process is called calibration.&lt;/p&gt;
+
+&lt;p&gt;Let us introduce some concepts in non-technique way.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Numeraire&lt;/strong&gt;: a positive non-dividend paying asset, which can be seen as a benchmark asset&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Measure&lt;/strong&gt;: a probability distribution&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Change of measure&lt;/strong&gt;: change the mean of the distribution, but the volatility keeps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The rate of return and the probability can be adjusted, in the above language, the benchmark (Numeraire) and the probability distribution (Measure) can be changed for the calculation convenience.&lt;/p&gt;</content><author><name>Yang An</name></author><category term="math" /><summary type="html">From the words Risk Neutral, it tells that the investor has no risk preference. That’s correct, but what does it mean? It means two practical points below to me:</summary></entry><entry><title type="html">Ito’s Lemma</title><link href="http://localhost:4001/math/2022/10/10/Ito's-Lemma.html" rel="alternate" type="text/html" title="Ito’s Lemma" /><published>2022-10-10T16:20:46+08:00</published><updated>2022-10-10T16:20:46+08:00</updated><id>http://localhost:4001/math/2022/10/10/Ito&apos;s-Lemma</id><content type="html" xml:base="http://localhost:4001/math/2022/10/10/Ito&apos;s-Lemma.html">&lt;p&gt;Ito’s Lemma is the chain rule in stochastic process. It is foundamental technique to simplify stochsastic process formula.&lt;/p&gt;
 
 &lt;p&gt;Ito’s Lemma is a differential form of Ito-Doeblin formula. Essentially they are the same but in different forms.&lt;/p&gt;
 
