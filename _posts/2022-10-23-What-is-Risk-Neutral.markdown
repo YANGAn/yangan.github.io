@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "What is Risk Neutral"
-date:   2022-10-10 16:20:46 +0800
+date:   2023-1-10 16:20:46 +0800
 categories: math
 use_math: true
 ---
-From the words Risk Neutral, it tells the investor has no risk preference. That's correct, but what does it mean? It means two practical points below to me:
+From the words Risk Neutral, it tells that the investor has no risk preference. That's correct, but what does it mean? It means two practical points below to me:
 
 * Expected rate of return is risk free rate
 * The spot price is the expectation of the asset/underlying
