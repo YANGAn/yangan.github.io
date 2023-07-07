@@ -7,13 +7,15 @@ use_math: true
 ---
 The fixed income market offers bonds, and the interest rate derivatives are the pre-eminent market among the OTC transactions. This contributes from the nature of corporate financing.
 
-> Global fiexed income markets outstanding is \\$126.9 trillion in 2021, while global equity market capitalization is \\$124.4 trilion in 2021.
+> Global fixed income markets outstanding is \$126.9 trillion in 2021, while global equity market capitalization is \\$124.4 trilion in 2021.
 
-> The notional value of outstanding interest rate derivative is \\$440 trillion, while the total derivative is \\$610 trillion in 2021.
+> The notional value of outstanding interest rate derivative is \$440 trillion, while the total derivative is \\$610 trillion in 2021.
 
-The term structure is the specific part from derivatives on equity market. Hull White model is one of the earliest model that can model the term structure. It is popular because it is non-aribtrage and relatively easy to calibrate.
+The term structure is the specific part from derivatives on equity market. Hull White model is one of the earliest no-arbitrage model that can model the term structure. It is popular because it is non-aribtrage and relatively easy to calibrate.
 
-It models the short rate and becomes one factor model if the mean reversion is pre-determined.
+It models the short rate and the price of a derivative is a function of the entire yield curve. 
+
+[Comment]: Single factor models assume that yields for all maturities along the zero curve are instantaneously perfectly correlated, a simplication of reality. How to tell this assumption? https://www.powerfinance.com/help/Hull_White_Model_Introduction.htm
 
 **Short Rate**
 
@@ -21,7 +23,7 @@ Let $P(t,T)$ be a bond price with the maturity at $T$. The relationship with for
 
 $P(t,T) = e^{-\int_t^T{f(t,u)du}}$
 
-The forward rate is the rate over the period of $[t,T]$ and observed from market if $t$ is the current time point. The short rate $r(T)$ is $f(T,T)$, a future instantenous rate.
+The forward rate is the rate over the period of $[t,T]$ and observed from market if $t$ is the current time point. The short rate $r_T$ is $f(T,T)$, a future instantenous rate.
 
 $P(t,T) = \mathbb{E}e^{-\int_t^T{r_u du}}$
 
@@ -29,33 +31,39 @@ $P(t,T) = \mathbb{E}e^{-\int_t^T{r_u du}}$
 
 $dr(t) = k[\theta(t) - r(t)]dt +\sigma(t)dW(t)$
 
-Let $r_t = x_t +\phi(t)$, then $\theta(t) = \phi(t) + \frac{1}{k}\frac{d\phi(t)}{dt}$ and the above process becomes the below
+where $k$ is the mean reversion rate. The parameters of $k$ and $\sigma(t)$ combine to creat the effective volatility.
 
-$dx_t = -kx_tdt + \sigma(t)dW(t)$
+Let $r(t) = x(t) +\phi(t)$ and $\theta(t) = \phi(t) + \frac{1}{k}\frac{d\phi(t)}{dt}$, then the above process becomes the below
+
+$dx(t) = -kx(t)dt + \sigma(t)dW(t)$
 
 Solve it by the following steps:
 
-$dx_t + kx_tdt = \sigma(t)dW(t)$
+$dx(t) + kx(t)dt = \sigma(t)dW(t)$
 
 $e^{kt}(dx_t + kx_tdt) = e^{kt}\sigma(t)dW(t)$
 
 $de^{kt}x_t =e^{kt}\sigma(t)dW(t)$
 
-Integrate by $t$ from $t$ to $u$,
+Integrate by $t$ from $v$ to $u$,
 
-$\int_t^u de^{kv}x_{v} =\int_t^u e^{kv}\sigma(v)dW(v)$
+$\int_v^u de^{kt}x_{t} =\int_v^u e^{kt}\sigma(t)dW(t)$
 
-$x_u = e^{-k(u-t)}x_t + \int_t^u e^{-k(u-v)}\sigma(v)dW(v)$
+$x(u) = e^{-k(u-v)}x(v) + \int_v^u e^{-k(u-t)}\sigma(t)dW(t)$
 
-$r_{u} = \phi(u) + e^{-k(u-t)}x_t + \int_t^u e^{-k(u-v)}\sigma(v)dW(v)$
+$r(u) = \phi(u) + e^{-k(u-v)}x(v) + \int_v^u e^{-k(u-t)}\sigma(t)dW(t)$
 
 [Comment]: The above formula gives the explicit solution of short rate $r(u)$.
 
-Integrate by $u$,
+Replace the variable $t$ with $s$ and $v$ with $t$. 
 
-$\int_t^T r_{u} du = \int_t^T \phi(u) du + \int_t^T e^{-k(u-t)}x_t du+ \int_t^T \int_t^u e^{-k(u-v)}\sigma(v)dW(v)du$
+$r(u) = \phi(u) + e^{-k(u-t)}x(t) + \int_t^u e^{-k(u-s)}\sigma(s)dW(s)$
 
-$\int_t^T r_{u} du = \int_t^T \phi(u) du + \beta(t,T) x_t + \int_t^T \sigma(v)\beta(v,T)dW(v)$, 
+Integrate by $u$ from $t$ to $T$,
+
+$\int_{t}^T r(u) du = \int_{t}^T \phi(u) du + \int_{t}^T e^{-k(u-t)}x(t) du+ \int_{t}^T \int_t^u e^{-k(u-s)}\sigma(s)dW(s)du$
+
+$\int_t^T r(u) du = \int_t^T \phi(u) du + \beta(t,T) x(t) + \int_t^T \sigma(s)\beta(s,T)dW(s)$, 
 
 where $\beta(t,T) = \frac{1}{k}(1-e^{-k(T-t)})$
 
@@ -63,20 +71,22 @@ So the bond price is
 
 $P(t,T) = \mathbb{E} e^{-\int_t^T r_{u} du}$
 
-$P(t,T) = \mathbb{E} e^{-[\int_t^T \phi(u) du + \beta(t,T) x_t + \int_t^T \sigma(v)\beta(v,T)dW(v)]}$
+$P(t,T) = \mathbb{E} e^{-[\int_t^T \phi(u) du + \beta(t,T) x(t) + \int_t^T \sigma(s)\beta(s,T)dW(s)]}$
 
 By Exponential Martingale Property,
 
-$P(t,T) = e^{-[\int_t^T \phi(u) du + \beta(t,T) x_t - \frac{1}{2}\int_t^T \sigma^2(v)\beta^2(v,T)dv]}$
+$P(t,T) = e^{-[\int_t^T \phi(u) du + \beta(t,T) x(t) - \frac{1}{2}\int_t^T \sigma^2(s)\beta^2(s,T)ds]}$
 
-$dP(t,T) = P(t,T)*[\phi(t)dt - d(\beta(t,T)x_t) - \frac{1}{2}\sigma^2(t)\beta^2(t,T)dt]$
+$dP(t,T) = P(t,T)*[\phi(t)dt - d(\beta(t,T)x(t)) - \frac{1}{2}\sigma^2(t)\beta^2(t,T)dt]$
 
-By Ito's Lemma on $x_t$,
+By Ito's Lemma on $\beta(t,T)x(t)$,
 
-$dP(t,T) = P(t,T) * [r_tdt - \sigma(t)\beta(t,T)dW(t)]$
+$d\beta(t,T)x(t) = x(t)d\beta(t,T) + \beta(t,T)dx(t) + \frac{1}{2} \beta^2(t,T)dx^2(t)$
+$= x(t)dt -\beta(t,T)\sigma(t)dW(t) + \frac{1}{2}\sigma^2(t)\beta^2(t,T)dt$
 
-The above formula give the relationship between the short rate $r(t)$ and the bond price $P(t,T)$.
+$dP(t,T) = P(t,T) * [r(t)dt - \sigma(t)\beta(t,T)dW(t)]$
 
+The above formula give the relationship between the short rate $r(t)$ and the bond price $P(t,T)$. Based on it, the calibration of the multiplication of $\sigma(t)$ and $\beta(t,T)$ (a function of $k$) is straightforward from the observed bond price and short rate from caplet or swaption. The mean reversion rate $k$ usually choose from empirical value on the order of 0.0 to 0.1.
 
 -------
 
